@@ -149,14 +149,6 @@ html {
   box-sizing: inherit;
 }
 
-:root 
---orange: ;
---darkblue: ;
---lightblue: ;
---grey: ;
-
-
-
 
 body {
   font-family: "Montserrat";
@@ -561,8 +553,6 @@ h6 {
   background: linear-gradient(rgba(37, 43, 66, 1),
       rgb(11, 75, 92));
 }
-
-;
 
 .staff__job {
   color: #737373;
