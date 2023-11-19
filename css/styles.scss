@@ -46,14 +46,6 @@ h6 {
   font-style: normal;
 }
 
-#card-items {
-  border-radius: 5px;
-  border: 1px solid #dedede;
-  background: var(--light-background, #fff);
-  gap: 20px;
-  padding: 30px 35px;
-}
-
 #card-staff {
   align-items: center;
   justify-content: center;
@@ -163,6 +155,13 @@ $primary-color: #ffa62b;
 
 /* Home-2. Strong Points start*/
 
+.customer-feedback {
+  .grid-card {
+    border-radius: 5px;
+    gap: 20px;
+    padding: 30px 35px;
+  }
+}
 .strong-points,
 .customer-feedback,
 .our-team,
@@ -211,13 +210,13 @@ $primary-color: #ffa62b;
 
 .grid-card {
   background-color: white;
+  border: 1px solid #e8e8e8;
   display: flex;
-  width: 328px;
+  max-width: 328px;
   padding: 35px 40px;
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  border: 1px solid #e8e8e8;
 }
 
 .card__title {
@@ -534,3 +533,59 @@ $colors: (
 }
 
 /* Home-6. Contact Form end */
+
+.carousel {
+  position: relative;
+  width: 1060px;
+  padding: 0 50px;
+
+  &__wrapper {
+    width: 960px;
+    overflow: hidden;
+  }
+
+  &__list {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* http://davidwalsh.name/remove-whitespace-inline-block */
+    display: flex;
+    gap: 30px;
+  }
+  &__item {
+    width: 300px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: calc(50% - 13px);
+    padding: 5px;
+    background: #ddd;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    &--prev {
+      left: 7px;
+    }
+
+    &--next {
+      right: 7px;
+    }
+  }
+}
+
+//==================
