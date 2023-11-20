@@ -1,3 +1,8 @@
+import Swiper from 'swiper/bundle'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
 document.addEventListener('DOMContentLoaded', function () {
   let form = document.getElementById('contact-form')
 
@@ -69,8 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  })
+  //==============
   initSlider()
-
   function initSlider() {
     /* конфигурация */
     let width = 330 // ширина картинки
@@ -86,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
       position = Math.min(position, 0)
       list.style.marginLeft = position + 'px'
+      console.log('Position: ', position)
     }
 
     document.querySelector('.arrow--next').onclick = function () {
